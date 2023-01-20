@@ -28,8 +28,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
             var img = new Image();
-            img.id = "Alfil"
-            img.src = "bishop.png";
+            img.id = "Reina"
+            img.src = "queen.png";
             $(document).ready(function () {
                 $('#pos44').append(img);
                 $('.dCasb,.dCasn').attr('draggable', true);
@@ -57,7 +57,7 @@
                     console.log(this.id);
                     
                     if(localizacion(sOriginal, sDestino)){
-                        $('#Alfil').appendTo(this);
+                        $('#Reina').appendTo(this);
                     }else{
                         console.log("Ese movimiento no es valido");
                     }
@@ -76,11 +76,11 @@
                 or= or1+or2;
                 des=des1+des2;
 
-                if(Math.abs(or1 - des1) == Math.abs(or2 - des2)){
-                    console.log("Movimiento válido para el alfil");
+                if((Math.abs(or1 - des1) == Math.abs(or2 - des2)) || (or1 == des1) || (or2 == des2)) {
+                    console.log("Movimiento válido para la reina");
                     return true;
                 }else{
-                    console.log("Movimiento inválido para el alfil");
+                    console.log("Movimiento inválido para la reina");
                     return false;
                 }
             }
